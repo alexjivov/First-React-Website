@@ -26,8 +26,14 @@ body {
 
 }
 
+a {
+ text-decoration: none;
+
+ cursor: pointer; 
+}
+
 /*
-Mix-Ins
+Mix-Ins - one for transitions and one to translate the Y-Axis
 */
 
 @mixin translateY($e) {
