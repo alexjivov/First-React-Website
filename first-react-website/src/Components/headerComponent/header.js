@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
 // Removed CSS because it is already included in App.js
 
+//Imports JUST the link for use
+// In React, you do not need anchor tags because they are single page applications
+// Use <Link /> instead of <a> 
+import {
+    Link
+    
+  } from 'react-router-dom';
+
 // components
 // have to rename component in here and at export - must start with a capital
 class Header extends Component {
@@ -14,13 +22,14 @@ class Header extends Component {
         <nav>
             <ul>
                 <li className="first">
-                    <a href="#">Home</a>
+                <Link to="/">Home</Link>
                 </li>
                 <li>
-                    <a href="#">Products</a>
+                    <Link to="/Products">Products</Link>
                 </li>
                 <li className ="last">
-                    <a href="#">Contact</a>
+            
+                <Link to="/Contact">Contact</Link>
                 </li>
 
             </ul>
