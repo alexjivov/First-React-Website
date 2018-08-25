@@ -23,18 +23,19 @@ var SCSS_DEST = './src/Assets/css'; //output
 gulp.task('compile_scss', function() {
 
     gulp.src(SCSS_SRC)
-    .pipe(sass().on('error', sass.logError))
-    .pipe(minifyCSS())
-    .pipe(rename({suffix: '.min'}))
-    .pipe(changed(SCSS_DEST))
-    .pipe(gulp.dest(SCSS_DEST));
+    .pipe(sass().on('error', sass.logError)) // compiling into standard CSS
+    .pipe(minifyCSS()) // Minify it
+    .pipe(rename({suffix: '.min'})) // changing file name to minify
+    .pipe(changed(SCSS_DEST)) // only applies to changed files
+    .pipe(gulp.dest(SCSS_DEST)); // sending to output destyination
+    
 
 });
 
 //detect changes in SCSS
-gulp.task('watch_scss', function() {
-    gulp.watch(SCSS_SRC, ['compile_scss']);
+gulp.task('watch_scss', function() { // watches input folder and when it detects a change, it runs the below function
+    gulp.watch(SCSS_SRC, ['compile_scss']); //pass through as many tasks as you want on a loop
 });
 
 // Run tasks
-gulp.task('default', ['watch_scss']);
+gulp.task('default', ['watch_scss']); // when you type 'run gulp' it defaults to gulp
