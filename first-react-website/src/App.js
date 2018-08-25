@@ -12,7 +12,7 @@ import './Assets/css/default.min.css';
 import Header from './Components/headerComponent/header';
 
 // import footer component
-import Footer from './Components/footerComponent/footer';
+// import Footer from './Components/footerComponent/footer';
 
 // import homepage component
 import Homepage from './Components/pages/homepage';
@@ -25,7 +25,7 @@ class App extends Component {
       <div className="App">
        <Header />
           <Homepage />
-       <Footer />
+    
        </div>
 
     );
